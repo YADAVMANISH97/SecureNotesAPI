@@ -19,7 +19,7 @@ const noteRoutes = require('./routes/noteRoutes');
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
 
-// Start server after DB connection
+// Start server after DB connection is established
 const startServer = async () => {
   try {
     await connectDB();
