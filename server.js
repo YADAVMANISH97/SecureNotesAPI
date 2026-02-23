@@ -7,6 +7,10 @@ app.use(express.json());
 
 const port = process.env.PORT || 3001;
 
+app.get("/", (req, res) => {
+  res.send("SecureNotes API is running!");
+});
+
 // Import routes
 const authRoutes = require('./routes/authRoutes');
 const noteRoutes = require('./routes/noteRoutes');
@@ -14,10 +18,6 @@ const noteRoutes = require('./routes/noteRoutes');
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
-
-app.get("/", (req, res) => {
-  res.send("SecureNotes API is running!");
-});
 
 // Start server after DB connection
 const startServer = async () => {
